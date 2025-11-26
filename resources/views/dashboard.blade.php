@@ -22,7 +22,7 @@
                     <div class="social-media">
                 </div>
             </div>
-            <div class="messages">
+            <div class="messages" style="padding-bottom: 60px;">
                 <ul>
                     {{-- 
                     <x-message class="sent" text="Hello WhatsApp!"/>

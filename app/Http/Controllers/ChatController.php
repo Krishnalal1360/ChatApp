@@ -46,7 +46,7 @@ class ChatController extends Controller
         $message->message = $request->message;
         $message->save();
         //
-        event(new SendMessageEvent($request->contact_id, $request->message));
+        event(new SendMessageEvent(Auth::id(), $request->contact_id, $request->message));
         //
         return response($message);
     }

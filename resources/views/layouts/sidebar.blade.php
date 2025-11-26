@@ -25,28 +25,28 @@
             </div>
                <hr> 
             <div id="contacts">
-                <ul>
-                    @forelse ($usersExceptAuthUser as $user)
+            <ul>
+                @forelse ($usersExceptAuthUser as $user)
                     <li class="contact-id" data-id="{{ $user->id }}">
-                        <div class="wrap">
-                            <span class="contact-status online"></span>
+                    <div class="wrap">
+                
+                        <div class="avatar">
                             <img src="{{ asset('uploads/avatar.png') }}" alt="" />
-                            <div class="meta">
-                                <p class="name">{{ $user->name }}</p>
-                                <p class="preview">{{ $user->email }}</p>
-                            </div>
+                            <span class="contact-status offline"></span>
                         </div>
+
+                        <div class="meta">
+                            <p class="name">{{ $user->name }}</p>
+                            <p class="preview">{{ $user->email }}</p>
+                        </div>
+                    </div>
                     </li>
-                    @empty
-                    {{--  
-                        <div class="no-users">
-                            No other users available.
-                        </div>
-                    --}}
-                        <p class="text-center">No users found.</p>
-                    @endforelse
-                </ul>
+                @empty
+                    <p class="text-center">No users found.</p>
+                @endforelse
+            </ul>
             </div>
+
 
             <div class="text-center mt-3 mb-3">
                 <form method="POST" action="{{ route('logout') }}">
